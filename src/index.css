@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* React Flow Overrides */
+.react-flow.dark {
+  --xy-background-color: #000000;
+  --xy-node-background: #000000;
+  --xy-node-color: #ffffff;
+  --xy-node-border: 2px solid #ffffff;
+  --xy-edge-stroke: #ffffff;
+  --xy-connection-stroke: #ffffff;
+  --xy-handle-background: #ffffff;
+  --xy-handle-border: 1px solid #000;
+}
+
+.react-flow__pane {
+  background-color: #000;
+}
+
+.react-flow__background {
+  background-size: 20px 20px;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #0f0 !important;
+  stroke-width: 3;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 4;
+}
+
+.react-flow__node {
+  border-radius: 0;
+  padding: 10px;
+  background: #000;
+  border: 2px solid #fff;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 4px 4px 0px #fff;
+}
+
+.react-flow__node.selected {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.react-flow__controls {
+  background-color: #000;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.react-flow__controls-button {
+  background: #000;
+  border: none;
+  border-bottom: 1px solid #fff;
+  fill: #fff;
+  color: #fff;
+}
+
+.react-flow__controls-button:hover {
+  background: #333;
+}
+
+/* Custom Node Styles */
+.custom-node {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-node-icon {
+  font-size: 24px;
+}
+
+.custom-node-label {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+.custom-node-input {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px dashed #fff;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 2px;
+  outline: none;
+}
+
+.custom-node-input:focus {
+  border-bottom: 1px solid #0f0;
+  color: #0f0;
+}
+
+.custom-node-content {
+  width: 100%;
+}
+
+.node-delete-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+}
+
+.node-delete-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+textarea {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  resize: vertical;
+  padding: 4px;
+  min-height: 60px;
+}
+
+.hitl-node {
+  border: 2px solid #fff;
+  background: #000;
+}
+
+/* Annotation Styles */
+.annotation-node {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.annotation-textarea {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  min-height: 40px;
+  text-align: center;
+  width: auto;
+  min-width: 100px;
+}
+
+.annotation-textarea:focus {
+  outline: 1px dashed #fff;
+}
+
+/* UI Controls Overlay */
+.ui-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #fff;
+  padding: 10px;
+  box-shadow: 6px 6px 0px #fff;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.divider-v {
+  width: 2px;
+  height: 30px;
+  background: #fff;
+  margin: 0 5px;
+}
+
+.btn-console {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  pointer-events: auto;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-console:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-highlight {
+  border-color: #0f0;
+  color: #0f0;
+}
+
+.btn-highlight:hover {
+  background: #0f0;
+  color: #000;
+}
+
+.btn-dim {
+  border-color: #666;
+  color: #666;
+}
+
+.btn-dim:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Sidebar & Layout */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.project-sidebar {
+  width: 300px;
+  height: 100%;
+  border-right: 2px solid #fff;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 20;
+}
+
+.project-sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.collapse-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.collapse-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.collapsed .sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.new-project-form {
+  display: flex;
+  gap: 8px;
+}
+
+.console-input {
+  flex: 1;
+  background: #000;
+  border: 1px dashed #fff;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 8px;
+  outline: none;
+}
+
+.console-input:focus {
+  border-style: solid;
+  border-color: #0f0;
+}
+
+.icon-btn {
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-item {
+  border: 1px solid #333;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.project-item:hover {
+  border-color: #666;
+}
+
+.project-item.active {
+  border: 2px solid #fff;
+  background: #111;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.project-date {
+  font-size: 10px;
+  color: #666;
+}
+
+.project-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.action-btn.delete {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.action-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.action-btn.delete:hover {
+  background: #ff4444;
+  color: #000;
+}
+
+.action-btn.save {
+  border-color: #0f0;
+  color: #0f0;
+}
+
+.action-btn.save:hover {
+  background: #0f0;
+  color: #000;
+}
+
+.status-footer {
+  margin-top: auto;
+  padding: 15px;
+  border-top: 2px solid #fff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-indicator.active {
+  background: #0f0;
+  box-shadow: 0 0 8px #0f0;
+}
+
+/* Canvas & Overlays */
+.canvas-container {
+  flex: 1;
+  position: relative;
+}
+
+.overlay-msg {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-box {
+  border: 4px solid #fff;
+  padding: 40px;
+  background-color: #000;
+  box-shadow: 10px 10px 0px #fff;
+}
+
+.msg-box p {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 2px;
+}
