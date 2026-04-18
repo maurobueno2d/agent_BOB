@@ -1,12 +1,12 @@
-# 🤖 Agent Bob: Architecture Architect
+# 🤖 Agent Bob: Architecture Architect | SOVERIS
 
-A professional, monotone visual orchestration tool for designing AI Agent workflows. Built with a focus on high-contrast aesthetics, universal port systems, and developer productivity.
+A professional, monotone visual orchestration tool for designing AI Agent workflows. Built by **SOVERIS** (formerly PHUNK), focusing on high-contrast aesthetics, universal port systems, and developer productivity.
 
 ![Preview](https://raw.githubusercontent.com/xyflow/react-flow/master/examples/public/react-flow-logo.png) <!-- Reemplazar con screenshot real -->
 
 ## ✨ Features
 
-- **Monotone Console UI**: High-contrast black & white aesthetic for zero-distraction design.
+- **SOVERIS Monotone Engine**: High-contrast black & white aesthetic for zero-distraction design.
 - **Universal Port System**: Bi-directional handles for seamless flow orchestration.
 - **Multi-Project Management**: Create, save, and switch between multiple agent architectures.
 - **Dynamic Layouts**: Toggle between Vertical and Horizontal orchestration with one click.
@@ -18,15 +18,15 @@ A professional, monotone visual orchestration tool for designing AI Agent workfl
 - **Framework**: React 18
 - **Visual Engine**: [XYFlow / React Flow](https://reactflow.dev/)
 - **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Styling**: Vanilla CSS (CSS Variables + Monotone System)
+- **Styling**: Vanilla CSS (SOVERIS Design System)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
 ## 🚀 Getting Started
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/agent-bob.git
-   cd agent-bob
+   git clone https://github.com/maurobueno2d/agent_BOB.git
+   cd agent_BOB
    ```
 
 2. **Install dependencies**
@@ -39,21 +39,16 @@ A professional, monotone visual orchestration tool for designing AI Agent workfl
    npm run dev
    ```
 
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
 ## 📂 Project Structure
 
-- `src/components`: UI components (Sidebar, Toolbar, Custom Nodes).
+- `src/components`: UI components with SOVERIS branding.
 - `src/store`: Centralized state management with persistence.
-- `openspec`: Assisted development specifications and evolution logs.
+- `openspec`: Evolution logs and assisted development history.
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. Copyright (c) 2026 SOVERIS.
 
 ---
 
-*Built with ❤️ for the AI Agent Community.*
+*Built with ❤️ by SOVERIS.*

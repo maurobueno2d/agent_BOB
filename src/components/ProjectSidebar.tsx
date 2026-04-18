@@ -92,10 +92,16 @@ export function ProjectSidebar() {
 
           {currentProject && (
             <div className="status-footer">
-              <div className="status-indicator active" />
-              <span>ACTIVE: {currentProject.name}</span>
+              <div className="status-indicator active"></div>
+              <div className="status-text">
+                <span className="source-label">SOVERIS</span>
+                <span className="status-val">ACTIVE: {currentProject?.name || '---'}</span>
+              </div>
             </div>
           )}
+          <div className="branding-footer">
+            POWERED BY SOVERIS (FORMERLY PHUNK)
+          </div>
         </div>
       )}
     </div>

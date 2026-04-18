@@ -473,23 +473,49 @@ textarea {
 .status-footer {
   margin-top: auto;
   padding: 15px;
-  border-top: 2px solid #fff;
-  font-size: 11px;
+  border-top: 1px solid #333;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: #000;
 }
 
 .status-indicator {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
 }
 
 .status-indicator.active {
   background: #0f0;
   box-shadow: 0 0 8px #0f0;
+}
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.source-label {
+  font-size: 8px;
+  color: #0f0;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.status-val {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.branding-footer {
+  padding: 10px 15px;
+  font-size: 7px;
+  color: #444;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #111;
 }
 
 /* Canvas & Overlays */
