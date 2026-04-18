@@ -34,7 +34,7 @@ export function FlowCanvas() {
     if (edgeReconnectTimeout.current) clearTimeout(edgeReconnectTimeout.current);
   }, []);
 
-  const onReconnectEnd = useCallback((_, edge: any) => {
+  const onReconnectEnd = useCallback((_: any, edge: any) => {
     edgeReconnectTimeout.current = setTimeout(() => {
       onEdgesChange([{ id: edge.id, type: 'remove' }]);
     }, 100);
@@ -65,7 +65,7 @@ export function FlowCanvas() {
           onReconnect={handleReconnect}
           onReconnectStart={onReconnectStart}
           onReconnectEnd={onReconnectEnd}
-          onEdgeClick={(_, edge) => invertEdge(edge.id)}
+          onEdgeClick={(_: any, edge) => invertEdge(edge.id)}
           nodeTypes={nodeTypes}
           colorMode="dark"
           fitView
