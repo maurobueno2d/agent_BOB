@@ -54,25 +54,22 @@ const UniversalPort = ({ position, id, style = {} }: { position: Position, id: s
 );
 
 export const AgentNode = memo(({ data, id, updateNodeLabel, deleteNode }: any) => {
-  const layout = useStore((state) => state.layout);
-  const isVertical = layout === 'vertical';
-
   return (
     <div className="custom-node">
       <DeleteButton onClick={() => deleteNode(id)} />
       
       {/* PRIMARY FLOW PORTS */}
-      <UniversalPort position={isVertical ? Position.Top : Position.Left} id="main-in" />
-      <UniversalPort position={isVertical ? Position.Bottom : Position.Right} id="main-out" />
+      <UniversalPort position={Position.Top} id="main-in" />
+      <UniversalPort position={Position.Bottom} id="main-out" />
       
       {/* SECONDARY/INSTRUCTION PORTS (GREEN) */}
       <UniversalPort 
-        position={isVertical ? Position.Left : Position.Top} 
+        position={Position.Left} 
         id="side-in" 
         style={{ backgroundColor: '#0f0', border: 'none' }}
       />
       <UniversalPort 
-        position={isVertical ? Position.Right : Position.Bottom} 
+        position={Position.Right} 
         id="side-out" 
         style={{ backgroundColor: '#0f0', border: 'none' }}
       />
@@ -90,25 +87,22 @@ export const AgentNode = memo(({ data, id, updateNodeLabel, deleteNode }: any) =
 });
 
 export const InstructionNode = memo(({ data, id, updateNodeData, deleteNode }: any) => {
-  const layout = useStore((state) => state.layout);
-  const isVertical = layout === 'vertical';
-
   return (
     <div className="custom-node">
       <DeleteButton onClick={() => deleteNode(id)} />
       
       {/* PRIMARY PORTS */}
-      <UniversalPort position={isVertical ? Position.Top : Position.Left} id="main-in" />
-      <UniversalPort position={isVertical ? Position.Bottom : Position.Right} id="main-out" />
+      <UniversalPort position={Position.Top} id="main-in" />
+      <UniversalPort position={Position.Bottom} id="main-out" />
       
       {/* SECONDARY PORTS (GREEN) */}
       <UniversalPort 
-        position={isVertical ? Position.Left : Position.Top} 
+        position={Position.Left} 
         id="side-in" 
         style={{ backgroundColor: '#0f0', border: 'none' }}
       />
       <UniversalPort 
-        position={isVertical ? Position.Right : Position.Bottom} 
+        position={Position.Right} 
         id="side-out" 
         style={{ backgroundColor: '#0f0', border: 'none' }}
       />
@@ -127,13 +121,10 @@ export const InstructionNode = memo(({ data, id, updateNodeData, deleteNode }: a
 });
 
 export const HITLNode = memo(({ data, id, updateNodeLabel, deleteNode }: any) => {
-  const layout = useStore((state) => state.layout);
-  const isVertical = layout === 'vertical';
-
   return (
     <div className="custom-node hitl-node">
       <DeleteButton onClick={() => deleteNode(id)} />
-      <UniversalPort position={isVertical ? Position.Top : Position.Left} id="main-in" />
+      <UniversalPort position={Position.Top} id="main-in" />
       <div className="custom-node-icon">
         <HumanIcon />
       </div>
@@ -143,19 +134,16 @@ export const HITLNode = memo(({ data, id, updateNodeLabel, deleteNode }: any) =>
         value={data.label}
         onChange={(e) => updateNodeLabel(id, e.target.value)}
       />
-      <UniversalPort position={isVertical ? Position.Bottom : Position.Right} id="main-out" />
+      <UniversalPort position={Position.Bottom} id="main-out" />
     </div>
   );
 });
 
 export const WildcardNode = memo(({ data, id, updateNodeLabel, deleteNode }: any) => {
-  const layout = useStore((state) => state.layout);
-  const isVertical = layout === 'vertical';
-
   return (
     <div className="custom-node">
       <DeleteButton onClick={() => deleteNode(id)} />
-      <UniversalPort position={isVertical ? Position.Top : Position.Left} id="main-in" />
+      <UniversalPort position={Position.Top} id="main-in" />
       <div className="custom-node-icon">
         <DiamondIcon />
       </div>
@@ -164,7 +152,7 @@ export const WildcardNode = memo(({ data, id, updateNodeLabel, deleteNode }: any
         value={data.label}
         onChange={(e) => updateNodeLabel(id, e.target.value)}
       />
-      <UniversalPort position={isVertical ? Position.Bottom : Position.Right} id="main-out" />
+      <UniversalPort position={Position.Bottom} id="main-out" />
     </div>
   );
 });

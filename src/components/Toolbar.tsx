@@ -1,20 +1,17 @@
+// Toolbar.tsx
 import React, { useCallback } from 'react';
 import { Panel, useReactFlow } from '@xyflow/react';
 import { toSvg } from 'html-to-image';
 import { useStore } from '../store';
 
-interface ToolbarProps {
-  onExportJSON: () => void;
-}
-
 export function Toolbar() {
   const { 
     addNode, 
     exportJSON, 
-    toggleLayout, 
-    layout, 
     projects, 
-    currentProjectId 
+    currentProjectId,
+    selectedNodeIds,
+    groupNodes,
   } = useStore();
   
   const { fitView } = useReactFlow();
@@ -59,6 +56,13 @@ export function Toolbar() {
     }, 200);
   }, [fitView, currentProject]);
 
+  const handleGroupNodes = () => {
+    if (selectedNodeIds.length > 0) {
+      const backdropId = `backdrop_${Date.now()}`;
+      groupNodes(selectedNodeIds, backdropId);
+    }
+  };
+
   return (
     <Panel position="top-left" className="ui-overlay">
       <div className="button-group">
@@ -72,20 +76,21 @@ export function Toolbar() {
       <div className="divider-v" />
       
       <div className="button-group">
+        <button className="btn-console" onClick={exportSVG}>
+          Exportar SVG
+        </button>
+        
+        <button className="btn-console" onClick={exportJSON}>
+          Exportar JSON
+        </button>
+
         <button 
           className="btn-console" 
-          onClick={toggleLayout}
-          style={{ backgroundColor: layout === 'horizontal' ? '#333' : '#000' }}
+          onClick={handleGroupNodes}
+          disabled={selectedNodeIds.length === 0}
+          style={{ borderColor: selectedNodeIds.length > 0 ? '#0f0' : '#444' }}
         >
-          LAYOUT: {layout.toUpperCase()}
-        </button>
-        
-        <button className="btn-console btn-highlight" onClick={exportSVG}>
-          SVG EXPORT
-        </button>
-        
-        <button className="btn-console btn-dim" onClick={exportJSON}>
-          JSON
+          Agrupar Múltiples ({selectedNodeIds.length})
         </button>
       </div>
     </Panel>

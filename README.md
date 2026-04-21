@@ -8,10 +8,19 @@ A professional, monotone visual orchestration tool for designing AI Agent workfl
 
 - **SOVERIS Monotone Engine**: High-contrast black & white aesthetic for zero-distraction design.
 - **Universal Port System**: Bi-directional handles for seamless flow orchestration.
-- **Multi-Project Management**: Create, save, and switch between multiple agent architectures.
-- **Dynamic Layouts**: Toggle between Vertical and Horizontal orchestration with one click.
-- **High-Fidelity Export**: Export your architectures as production-ready SVG files.
-- **Persistence**: Projects are saved locally using Zustand and LocalStorage.
+- **Advanced Orchestration Logic:**
+  - **Backdrop Grouping:** Select multiple nodes with a marquee and group them into parent components that automatically lock relative coordinates.
+  - **Bézier Waypoints:** Double-click any flow edge to inject an invisible routing node, giving you immediate curved-line track control.
+  - **Semantic Edge Reversal:** Click any edge to peacefully invert its visual logic (Blue/Red direction) without corrupting your spatial diagram structure.
+- **Contextual Help Panel:** A dynamic, non-intrusive AI-styled glass panel that suggests keyboard shortcuts and actions based on your precise selection context.
+- **Universal Port System:** Infinite dynamic connections overlapping perfectly without UI clutter.
+- **High-Fidelity Export:** Export your architectures natively as production-ready SVG graphs or standard JSON Blueprints.
+- **Persistence:** Local ZUSTAND cache engine ensures your complex workflows never wipe out on refresh.
+
+## 🎥 Agent Architect in Action
+
+![Demo de Arquitectura](assets/demo.gif)
+
 
 ## 🛠️ Stack
 
