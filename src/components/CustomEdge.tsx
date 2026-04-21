@@ -16,6 +16,7 @@ export function CustomEdge({
   // Determines color based on direction / type. Usually forward is blue, back is red.
   const isReturn = data?.direction === 'return';
   const edgeColor = isReturn ? '#ff4d4d' : data?.direction === 'forward' ? '#4da6ff' : '#fff';
+  const waypoints = (data?.waypoints as any[]) || [];
 
   const [edgePath, labelX, labelY] = getBezierPath({
     sourceX: isReturn ? targetX : sourceX,
@@ -30,7 +31,7 @@ export function CustomEdge({
   return (
     <>
       <BaseEdge path={edgePath} markerEnd={markerEnd} style={customStyle} id={id} />
-      {data?.waypoints && data.waypoints.map((wp: any, index: number) => (
+      {waypoints.map((wp: any, index: number) => (
         <EdgeLabelRenderer key={`${id}-wp-${index}`}>
           <div
             style={{

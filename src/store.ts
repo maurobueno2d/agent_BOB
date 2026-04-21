@@ -46,7 +46,7 @@ export type RFState = {
   selectedNodeIds: string[];
   setSelectedNodeIds: (ids: string[]) => void;
   groupNodes: (nodeIds: string[], backdropId: string) => void;
-  ungroupNodes: (nodeIds: string[]) => void;
+  ungroupNodes: (backdropId: string) => void;
   exportJSON: () => void;
   // Project Actions
   saveProject: () => void;
@@ -120,7 +120,7 @@ export const useStore = create<RFState>()(
           };
         });
       },
-      ungroupNodes: (backdropId) => {
+      ungroupNodes: (backdropId: string) => {
         set(state => {
           const backdrop = state.nodes.find(n => n.id === backdropId);
           if (!backdrop) return state;
@@ -212,7 +212,8 @@ export const useStore = create<RFState>()(
         set({
           edges: get().edges.map((edge) => {
             if (edge.id === id) {
-              const currentDirection = edge.data?.direction || 'forward';
+              const data = edge.data as { direction?: string; waypoints?: any[] } | undefined;
+              const currentDirection = data?.direction || 'forward';
               const newDirection = currentDirection === 'forward' ? 'return' : 'forward';
 
               return {
