@@ -1,8 +1,8 @@
-# 🤖 Agent Bob: Architecture Architect | SOVERIS
+# 🤖 Agent Architect | SOVERIS
 
 A professional, monotone visual orchestration tool for designing AI Agent workflows. Built by **SOVERIS** (formerly PHUNK), focusing on high-contrast aesthetics, universal port systems, and developer productivity.
 
-![Preview](https://raw.githubusercontent.com/xyflow/react-flow/master/examples/public/react-flow-logo.png) <!-- Reemplazar con screenshot real -->
+![Demo](assets/demo.gif)
 
 ## ✨ Features
 
@@ -16,11 +16,6 @@ A professional, monotone visual orchestration tool for designing AI Agent workfl
 - **Universal Port System:** Infinite dynamic connections overlapping perfectly without UI clutter.
 - **High-Fidelity Export:** Export your architectures natively as production-ready SVG graphs or standard JSON Blueprints.
 - **Persistence:** Local ZUSTAND cache engine ensures your complex workflows never wipe out on refresh.
-
-## 🎥 Agent Architect in Action
-
-![Demo de Arquitectura](assets/demo.gif)
-
 
 ## 🛠️ Stack
 
