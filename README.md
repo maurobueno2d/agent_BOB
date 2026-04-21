@@ -1,4 +1,4 @@
-# 🤖 Agent Architect | SOVERIS
+# 🤖 Agent BOB | SOVERIS
 
 A professional, monotone visual orchestration tool for designing AI Agent workflows. Built by **SOVERIS** (formerly PHUNK), focusing on high-contrast aesthetics, universal port systems, and developer productivity.
 
@@ -29,7 +29,7 @@ A professional, monotone visual orchestration tool for designing AI Agent workfl
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/maurobueno2d/agent_BOB.git
+   git clone https://github.com/MauroBueno-soverix/agent_BOB.git
    cd agent_BOB
    ```
 
